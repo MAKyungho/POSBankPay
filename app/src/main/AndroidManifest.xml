@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.knuworld.posbankpay">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.POSBankPay">
+        <activity
+            android:name=".view.PaymentActivity"
+            android:exported="true"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <!-- ACTION : name 특성에서 허용된 인텐트 작업 선언 -->
+                <action android:name="android.intent.action.VIEW"/>
+                <!-- CATEGORY : name 특성에서 허용된 인텐트 카테고리  -->
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <!-- DATA : 허용된 데이터의 유형을 선언 -->
+                <data android:host="default" android:scheme="merchant_app"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
